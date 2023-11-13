@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:register_form/config/theme/app_colors.dart';
 import 'package:register_form/presentation/page/credential/sign_in_page.dart';
 import 'package:register_form/presentation/widgets/button_container_widget.dart';
+import 'package:register_form/presentation/widgets/dropdown_button_container_widget.dart';
 import 'package:register_form/presentation/widgets/form_container_widget.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.greyBg,
+            color: AppColors.lightGrey,
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
               color: AppColors.black,
@@ -96,14 +97,30 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(
                     height: 18,
                   ),
-                  Text(
-                    "Должность",
-                    style: theme.textTheme.bodyMedium,
+                  GenderSelectionFormField(
+                    hintText: '- - - -',
+                    onSaved: (value) {
+                      // Seçilen değeri kaydetmek için
+                    },
+                    validator: (value) {
+                      if (value == null) {
+                        return 'Cinsiyet seçimi zorunlu';
+                      }
+                      return null;
+                    },
+                    onChanged: (value) {
+                      // Seçilen değerle işlemler yapmak için
+                    },
                   ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  const FormContainerWidget(),
+
+                  // Text(
+                  //   "Должность",
+                  //   style: theme.textTheme.bodyMedium,
+                  // ),
+                  // const SizedBox(
+                  //   height: 8,
+                  // ),
+                  // const FormContainerWidget(),
                   const SizedBox(
                     height: 18,
                   ),

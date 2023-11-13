@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:register_form/config/config.dart';
 import 'package:register_form/presentation/page/password_recovery/password_recovery.dart';
-import 'package:register_form/presentation/page/password_recovery/password_recovery_phone_number.dart';
 import 'package:register_form/presentation/widgets/button_container_widget.dart';
 import 'package:register_form/presentation/widgets/form_container_widget.dart';
 
@@ -22,7 +21,7 @@ class PasswordRecoverySMSPage extends StatelessWidget {
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2.5,
               decoration: BoxDecoration(
-                color: AppColors.greyBg,
+                color: AppColors.lightGrey,
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   color: AppColors.black,
@@ -30,89 +29,90 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 13, vertical: 15),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Center(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 13, vertical: 15),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Center(
+                        child: Text(
+                          "Восстановление пароля",
+                          style:
+                              theme.textTheme.bodyLarge?.copyWith(fontSize: 22),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 35,
+                      ),
+                      Text(
+                        "Введите код из СМС",
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Для продолжения сброса пароля Вам нужно ввести код, который Вам пришел в СМС",
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                      const SizedBox(
+                        height: 18,
+                      ),
+                      Text(
+                        "СМС код",
+                        style: theme.textTheme.bodyMedium,
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const FormContainerWidget(
+                        hintText: "2345",
+                      ),
+                      const SizedBox(height: 5),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const PasswordRecoveryPage(),
+                              ),
+                            );
+                          },
                           child: Text(
-                            "Восстановление пароля",
-                            style: theme.textTheme.bodyLarge
-                                ?.copyWith(fontSize: 22),
+                            "Не получили СМС?",
+                            style: theme.textTheme.bodySmall
+                                ?.copyWith(color: AppColors.black),
                           ),
                         ),
-                        const SizedBox(
-                          height: 35,
-                        ),
-                        Text(
-                          "Введите код из СМС",
-                          style: theme.textTheme.bodyMedium,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          "Для продолжения сброса пароля Вам нужно ввести код, который Вам пришел в СМС",
-                          style: theme.textTheme.bodyMedium,
-                        ),
-                        const SizedBox(
-                          height: 18,
-                        ),
-                        Text(
-                          "СМС код",
-                          style: theme.textTheme.bodyMedium,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        const FormContainerWidget(
-                          hintText: "2345",
-                        ),
-                        const SizedBox(height: 5),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const PasswordRecoveryPage(),
-                                ),
-                              );
+                      ),
+                      const SizedBox(
+                        height: 18,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 100, right: 100),
+                        child: Center(
+                          child: ButtonContainerWidget(
+                            color: AppColors.blue,
+                            text: "Подтвердить",
+                            onTapListener: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PasswordRecoverySMSPage()),
+                                  (route) => false);
                             },
-                            child: Text(
-                              "Не получили СМС?",
-                              style: theme.textTheme.bodySmall
-                                  ?.copyWith(color: AppColors.black),
-                            ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 18,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 100, right: 100),
-                          child: Center(
-                            child: ButtonContainerWidget(
-                              color: AppColors.blue,
-                              text: "Подтвердить",
-                              onTapListener: () {
-                                Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const PasswordRecoverySMSPage()),
-                                    (route) => false);
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ],
         ),

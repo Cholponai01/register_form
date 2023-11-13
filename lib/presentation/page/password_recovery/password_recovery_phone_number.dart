@@ -21,7 +21,7 @@ class PasswordRecoveryPhoneNumPage extends StatelessWidget {
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2.5,
               decoration: BoxDecoration(
-                color: AppColors.greyBg,
+                color: AppColors.lightGrey,
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   color: AppColors.black,

@@ -38,7 +38,7 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.05,
       decoration: BoxDecoration(
-        color: AppColors.greyBg,
+        color: AppColors.lightGrey,
         borderRadius: BorderRadius.circular(6),
         border: Border.all(
           color: AppColors.black,
@@ -74,7 +74,7 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
                     _obscureText ? Icons.visibility_off : Icons.visibility,
                     color: _obscureText == false
                         ? AppColors.black
-                        : AppColors.textGrey,
+                        : AppColors.grey,
                   )
                 : const Text(""),
           ),

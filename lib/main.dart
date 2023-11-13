@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:register_form/presentation/page/credential/sign_in_page.dart';
-import 'package:register_form/presentation/page/credential/sign_up_page.dart';
 
 void main() {
   runApp(MyApp());
