@@ -47,8 +47,8 @@ class _JobTitleSelectionFormFieldState
             widget.onChanged!(newValue);
           }
         },
-        items: <String>['Проект менеджер', 'HR']
-            .map<DropdownMenuItem<String>>((String value) {
+        items:
+            <String>['PM', 'HR'].map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
