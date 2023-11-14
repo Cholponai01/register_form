@@ -72,21 +72,10 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                       const SizedBox(height: 5),
                       Align(
                         alignment: Alignment.centerRight,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    const PasswordRecoveryPage(),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            "Не получили СМС?",
-                            style: theme.textTheme.bodySmall
-                                ?.copyWith(color: AppColors.black),
-                          ),
+                        child: Text(
+                          "Не получили СМС?",
+                          style: theme.textTheme.bodySmall
+                              ?.copyWith(color: AppColors.black),
                         ),
                       ),
                       const SizedBox(
@@ -102,8 +91,9 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const PasswordRecoverySMSPage()),
+                                    builder: (context) =>
+                                        const PasswordRecoveryPage(),
+                                  ),
                                   (route) => false);
                             },
                           ),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:register_form/config/theme/app_colors.dart';
 import 'package:register_form/presentation/page/credential/sign_in_page.dart';
 import 'package:register_form/presentation/widgets/button_container_widget.dart';
-import 'package:register_form/presentation/widgets/dropdown_button_container_widget.dart';
+import 'package:register_form/presentation/widgets/dropdown_gender_selection_widget.dart';
+import 'package:register_form/presentation/widgets/dropdown_job_title_selection_widget.dart';
 import 'package:register_form/presentation/widgets/form_container_widget.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -97,30 +98,67 @@ class _SignUpPageState extends State<SignUpPage> {
                   const SizedBox(
                     height: 18,
                   ),
-                  GenderSelectionFormField(
-                    hintText: '- - - -',
-                    onSaved: (value) {
-                      // Seçilen değeri kaydetmek için
-                    },
-                    validator: (value) {
-                      if (value == null) {
-                        return 'Cinsiyet seçimi zorunlu';
-                      }
-                      return null;
-                    },
-                    onChanged: (value) {
-                      // Seçilen değerle işlemler yapmak için
-                    },
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Должность  ",
+                                style: theme.textTheme.bodyMedium,
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              JobTitleSelectionFormField(
+                                hintText: '- - - -',
+                                onSaved: (value) {},
+                                validator: (value) {
+                                  if (value == null) {
+                                    return 'Выбор позиции обязателен';
+                                  }
+                                  return null;
+                                },
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 15),
+                      Expanded(
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Пол",
+                                style: theme.textTheme.bodyMedium,
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              GenderSelectionFormField(
+                                hintText: '- - - -',
+                                onSaved: (value) {},
+                                validator: (value) {
+                                  if (value == null) {
+                                    return 'Выбор пола обязателен';
+                                  }
+                                  return null;
+                                },
+                                onChanged: (value) {},
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-
-                  // Text(
-                  //   "Должность",
-                  //   style: theme.textTheme.bodyMedium,
-                  // ),
-                  // const SizedBox(
-                  //   height: 8,
-                  // ),
-                  // const FormContainerWidget(),
                   const SizedBox(
                     height: 18,
                   ),

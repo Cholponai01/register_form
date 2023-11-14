@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:register_form/config/config.dart';
 
-class GenderSelectionFormField extends StatefulWidget {
+class JobTitleSelectionFormField extends StatefulWidget {
   final String? hintText;
   final FormFieldSetter<String>? onSaved;
   final FormFieldValidator<String>? validator;
   final void Function(String?)? onChanged;
 
-  const GenderSelectionFormField({
+  const JobTitleSelectionFormField({
     Key? key,
     this.hintText,
     this.onSaved,
@@ -15,11 +16,12 @@ class GenderSelectionFormField extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<GenderSelectionFormField> createState() =>
-      _GenderSelectionFormFieldState();
+  State<JobTitleSelectionFormField> createState() =>
+      _JobTitleSelectionFormFieldState();
 }
 
-class _GenderSelectionFormFieldState extends State<GenderSelectionFormField> {
+class _JobTitleSelectionFormFieldState
+    extends State<JobTitleSelectionFormField> {
   String? selectedGender;
 
   @override
@@ -45,7 +47,7 @@ class _GenderSelectionFormFieldState extends State<GenderSelectionFormField> {
             widget.onChanged!(newValue);
           }
         },
-        items: <String>['Erkek', 'Kız']
+        items: <String>['Проект менеджер', 'HR']
             .map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
@@ -56,7 +58,7 @@ class _GenderSelectionFormFieldState extends State<GenderSelectionFormField> {
           border: InputBorder.none,
           filled: true,
           hintText: widget.hintText,
-          hintStyle: TextStyle(color: Colors.black, fontSize: 15),
+          hintStyle: theme.textTheme.bodyMedium,
           contentPadding:
               const EdgeInsets.only(left: 10.0, top: 4.0, bottom: 4.0),
         ),
