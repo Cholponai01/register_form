@@ -46,8 +46,7 @@ class _GenderSelectionFormFieldState extends State<GenderSelectionFormField> {
             widget.onChanged!(newValue);
           }
         },
-        items: <String>['Erkek', 'Kız']
-            .map<DropdownMenuItem<String>>((String value) {
+        items: <String>['М', 'Ж'].map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:register_form/presentation/page/credential/sign_in_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
