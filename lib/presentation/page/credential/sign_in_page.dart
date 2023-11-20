@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:register_form/config/theme/app_colors.dart';
+import 'package:register_form/config/theme/sized_func.dart';
 import 'package:register_form/presentation/page/credential/sign_up_page.dart';
 import 'package:register_form/presentation/page/password_recovery/password_recovery_phone_number.dart';
 import 'package:register_form/presentation/widgets/button_container_widget.dart';
@@ -36,36 +37,28 @@ class SignInPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Center(
+                        const Center(
                           child: Text(
                             "Вход",
-                            style: theme.textTheme.bodyLarge
-                                ?.copyWith(fontSize: 22),
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.w600),
                           ),
                         ),
-                        const SizedBox(
-                          height: 35,
-                        ),
+                        sizeVer(15),
                         Text(
                           "ИНН",
                           style: theme.textTheme.bodyMedium,
                         ),
-                        const SizedBox(
-                          height: 8,
-                        ),
+                        sizeVer(8),
                         const FormContainerWidget(
                           hintText: "123456789",
                         ),
-                        const SizedBox(
-                          height: 18,
-                        ),
+                        sizeVer(18),
                         Text(
                           "Пароль",
                           style: theme.textTheme.bodyMedium,
                         ),
-                        const SizedBox(
-                          height: 8,
-                        ),
+                        sizeVer(8),
                         const FormContainerWidget(
                           isPasswordField: true,
                           hintText: "*********",
@@ -90,9 +83,7 @@ class SignInPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 18,
-                        ),
+                        sizeVer(18),
                         Padding(
                           padding: const EdgeInsets.only(left: 115, right: 115),
                           child: Center(

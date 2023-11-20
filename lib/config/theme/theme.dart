@@ -4,17 +4,20 @@ import 'package:register_form/config/theme/app_colors.dart';
 var theme = ThemeData(
   textTheme: const TextTheme(
     bodyLarge: TextStyle(
-      fontSize: 22,
-      fontWeight: FontWeight.w700,
-      color: AppColors.blue,
+      // tema
+      fontSize: 20,
+      fontWeight: FontWeight.w600,
+      color: AppColors.black,
     ),
+    // im9 inn nomer
     bodyMedium: TextStyle(
       fontSize: 15,
       fontWeight: FontWeight.w500,
       color: AppColors.black,
     ),
+    // zabyli parol
     bodySmall: TextStyle(
-      fontSize: 13,
+      fontSize: 12,
       fontWeight: FontWeight.w500,
       color: AppColors.black,
     ),

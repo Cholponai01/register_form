@@ -60,7 +60,11 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
           border: InputBorder.none,
           filled: true,
           hintText: widget.hintText,
-          hintStyle: const TextStyle(color: AppColors.black, fontSize: 15),
+          hintStyle: const TextStyle(
+            color: AppColors.black,
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+          ),
           contentPadding:
               const EdgeInsets.only(left: 10.0, top: 4.0, bottom: 4.0),
           suffixIcon: GestureDetector(
