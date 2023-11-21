@@ -39,7 +39,7 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
       height: MediaQuery.of(context).size.height * 0.05,
       decoration: BoxDecoration(
         color: AppColors.lightGrey,
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(8.0),
         border: Border.all(
           color: AppColors.black,
           width: 1,
