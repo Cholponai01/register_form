@@ -13,26 +13,34 @@ class PasswordRecoverySMSPage extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
         backgroundColor: AppColors.backgroundColor,
-        body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Image.asset("assets/images/linear_grad4.png"),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 190, right: 20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height / 2.2,
-                      decoration: BoxDecoration(
-                        color: AppColors.lightGrey,
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(
-                          color: AppColors.black,
-                          width: 1,
-                        ),
+        body: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Image.asset("assets/images/linear_grad4.png"),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              child: Image.asset("assets/images/linear_grad5.png"),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: AppColors.lightGrey,
+                      borderRadius: BorderRadius.circular(8.0),
+                      border: Border.all(
+                        color: AppColors.black,
+                        width: 1,
                       ),
+                    ),
+                    child: SingleChildScrollView(
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(12, 24, 12, 24),
                         child: Column(
@@ -41,14 +49,14 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                             Center(
                               child: Text(
                                 "Восстановление пароля",
-                                style: theme.textTheme.bodyLarge
-                                    ?.copyWith(fontSize: 22),
+                                style: theme.textTheme.bodyLarge,
                               ),
                             ),
                             sizeVer(42),
                             Text(
                               "Введите код из СМС",
-                              style: theme.textTheme.bodyMedium,
+                              style: theme.textTheme.bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.w600),
                             ),
                             sizeVer(7),
                             Text(
@@ -61,16 +69,15 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                               style: theme.textTheme.bodyMedium,
                             ),
                             sizeVer(7),
-                            const FormContainerWidget(
-                              hintText: "2345",
-                            ),
+                            const FormContainerWidget(),
                             sizeVer(7),
                             Align(
                               alignment: Alignment.centerRight,
                               child: Text(
                                 "Не получили СМС?",
-                                style: theme.textTheme.bodySmall
-                                    ?.copyWith(color: AppColors.black),
+                                style: theme.textTheme.bodySmall?.copyWith(
+                                  color: AppColors.black,
+                                ),
                               ),
                             ),
                             sizeVer(42),
@@ -97,15 +104,11 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 420),
-              //   child: Image.asset("assets/images/linear_grad5.png"),
-              // ),
-            ],
-          ),
+            ),
+          ],
         ));
   }
 }

@@ -32,23 +32,13 @@ class FormContainerWidget extends StatefulWidget {
 
 class _FormContainerWidgetState extends State<FormContainerWidget> {
   bool _obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.05,
-      decoration: BoxDecoration(
-        color: AppColors.lightGrey,
-        borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(
-          color: AppColors.black,
-          width: 1,
-        ),
-      ),
       child: TextFormField(
-        style: const TextStyle(
-          color: AppColors.black,
-        ),
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
         controller: widget.controller,
         keyboardType: widget.inputType,
         key: widget.fieldKey,
@@ -57,16 +47,20 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
         validator: widget.validator,
         onFieldSubmitted: widget.onFieldSubmitted,
         decoration: InputDecoration(
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: const BorderSide(color: AppColors.black),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+          ),
+          fillColor: AppColors.backgroundColor,
           filled: true,
           hintText: widget.hintText,
-          hintStyle: const TextStyle(
-            color: AppColors.black,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
           contentPadding:
-              const EdgeInsets.only(left: 10.0, top: 4.0, bottom: 4.0),
+              const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           suffixIcon: GestureDetector(
             onTap: () {
               setState(() {
@@ -79,6 +73,7 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
                     color: _obscureText == false
                         ? AppColors.black
                         : AppColors.grey,
+                    size: 24,
                   )
                 : const Text(""),
           ),

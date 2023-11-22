@@ -13,31 +13,36 @@ class PasswordRecoveryPhoneNumPage extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Image.asset("assets/images/linear_grad2.png"),
-            // Align(
-            //     alignment: Alignment.bottomCenter,
-            //     child: Image.asset("assets/images/linear_grad3.png")),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 190, right: 20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height / 2.34,
-                    decoration: BoxDecoration(
-                      color: AppColors.lightGrey,
-                      borderRadius: BorderRadius.circular(8.0),
-                      border: Border.all(
-                        color: AppColors.black,
-                        width: 1,
-                      ),
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            child: Image.asset("assets/images/linear_grad2.png"),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Image.asset("assets/images/linear_grad3.png"),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGrey,
+                    borderRadius: BorderRadius.circular(8.0),
+                    border: Border.all(
+                      color: AppColors.black,
+                      width: 1,
                     ),
-                    child: Padding(
-                        padding: const EdgeInsets.fromLTRB(12, 24, 12, 24),
+                  ),
+                  child: Padding(
+                      padding: const EdgeInsets.fromLTRB(12, 24, 12, 24),
+                      child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -51,7 +56,8 @@ class PasswordRecoveryPhoneNumPage extends StatelessWidget {
                             sizeVer(42),
                             Text(
                               "Забыли пароль?",
-                              style: theme.textTheme.bodyMedium,
+                              style: theme.textTheme.bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.w600),
                             ),
                             sizeVer(8),
                             Text(
@@ -64,9 +70,7 @@ class PasswordRecoveryPhoneNumPage extends StatelessWidget {
                               style: theme.textTheme.bodyMedium,
                             ),
                             sizeVer(8),
-                            const FormContainerWidget(
-                              hintText: "+996 708 494 568",
-                            ),
+                            const FormContainerWidget(),
                             sizeVer(42),
                             Padding(
                               padding:
@@ -87,17 +91,13 @@ class PasswordRecoveryPhoneNumPage extends StatelessWidget {
                               ),
                             ),
                           ],
-                        )),
-                  ),
-                ],
-              ),
+                        ),
+                      )),
+                ),
+              ],
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(top: 400),
-            //   child: Image.asset("assets/images/linear_grad3.png"),
-            // ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

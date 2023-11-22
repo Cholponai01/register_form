@@ -26,7 +26,6 @@ class PasswordRecoveryPage extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    height: MediaQuery.of(context).size.height / 1.82,
                     decoration: BoxDecoration(
                       color: AppColors.lightGrey,
                       borderRadius: BorderRadius.circular(8.0),
@@ -42,15 +41,15 @@ class PasswordRecoveryPage extends StatelessWidget {
                           children: [
                             Center(
                               child: Text(
-                                "Нужно создать новый пароль",
-                                style: theme.textTheme.bodyLarge
-                                    ?.copyWith(fontSize: 22),
+                                "Восстановление пароля",
+                                style: theme.textTheme.bodyLarge,
                               ),
                             ),
                             sizeVer(42),
                             Text(
-                              "Забыли пароль?",
-                              style: theme.textTheme.bodyMedium,
+                              "Нужно создать новый пароль?",
+                              style: theme.textTheme.bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.w600),
                             ),
                             sizeVer(7),
                             Text(
@@ -65,7 +64,6 @@ class PasswordRecoveryPage extends StatelessWidget {
                             sizeVer(7),
                             const FormContainerWidget(
                               isPasswordField: true,
-                              hintText: "********",
                             ),
                             const SizedBox(height: 5),
                             Align(
@@ -84,7 +82,6 @@ class PasswordRecoveryPage extends StatelessWidget {
                             sizeVer(7),
                             const FormContainerWidget(
                               isPasswordField: true,
-                              hintText: "********",
                             ),
                             sizeVer(42),
                             Padding(

@@ -23,20 +23,13 @@ class JobTitleSelectionFormField extends StatefulWidget {
 class _JobTitleSelectionFormFieldState
     extends State<JobTitleSelectionFormField> {
   String? selectedGender;
+  final jobTitlecontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.05,
-      decoration: BoxDecoration(
-        color: Colors.grey[300],
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(
-          color: Colors.black,
-          width: 1,
-        ),
-      ),
       child: DropdownButtonFormField<String>(
         value: selectedGender,
         onChanged: (String? newValue) {
@@ -47,15 +40,24 @@ class _JobTitleSelectionFormFieldState
             widget.onChanged!(newValue);
           }
         },
-        items:
-            <String>['PM', 'HR'].map<DropdownMenuItem<String>>((String value) {
+        items: <String>['Директор', 'Швея']
+            .map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
           );
         }).toList(),
         decoration: InputDecoration(
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: const BorderSide(color: AppColors.black),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.black,
+            ),
+          ),
+          fillColor: AppColors.backgroundColor,
           filled: true,
           hintText: widget.hintText,
           hintStyle: theme.textTheme.bodyMedium,
