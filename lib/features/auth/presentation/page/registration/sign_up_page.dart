@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:register_form/config/theme/app_colors.dart';
 import 'package:register_form/config/theme/sized_func.dart';
-import 'package:register_form/features/presentation/page/registration/sign_in_page.dart';
-import 'package:register_form/features/presentation/widgets/button_container_widget.dart';
-import 'package:register_form/features/presentation/widgets/dropdown_gender_selection_widget.dart';
-import 'package:register_form/features/presentation/widgets/dropdown_job_title_selection_widget.dart';
-import 'package:register_form/features/presentation/widgets/form_container_widget.dart';
+import 'package:register_form/features/auth/presentation/page/registration/sign_in_page.dart';
+import 'package:register_form/features/auth/presentation/widgets/button_container_widget.dart';
+import 'package:register_form/features/auth/presentation/widgets/dropdown_gender_selection_widget.dart';
+import 'package:register_form/features/auth/presentation/widgets/dropdown_job_title_selection_widget.dart';
+import 'package:register_form/features/auth/presentation/widgets/form_container_widget.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

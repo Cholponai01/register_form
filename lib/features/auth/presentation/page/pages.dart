@@ -1,3 +1,3 @@
 export 'registration/registration.dart';
 export 'password/password.dart';
-export 'home/home.dart';
+export '../../../user/presentation/page/home/home.dart';

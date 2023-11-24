@@ -1,4 +1,4 @@
-class RegisterModel {
+class UserModel {
   int? id;
   String? username;
   String? firstName;
@@ -8,7 +8,7 @@ class RegisterModel {
   Null? sewingWorkshop;
   bool? workStatus;
 
-  RegisterModel(
+  UserModel(
       {this.id,
       this.username,
       this.firstName,
@@ -18,7 +18,7 @@ class RegisterModel {
       this.sewingWorkshop,
       this.workStatus});
 
-  RegisterModel.fromJson(Map<String, dynamic> json) {
+  UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     username = json['username'];
     firstName = json['first_name'];

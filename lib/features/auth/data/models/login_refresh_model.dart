@@ -8,8 +8,8 @@ class LoginRefreshModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['refresh'] = this.refresh;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['refresh'] = refresh;
     return data;
   }
 }

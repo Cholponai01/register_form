@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:register_form/config/theme/app_colors.dart';
 import 'package:register_form/config/theme/sized_func.dart';
-import 'package:register_form/features/presentation/page/password/password_recovery_sms.dart';
-import 'package:register_form/features/presentation/widgets/button_container_widget.dart';
-import 'package:register_form/features/presentation/widgets/form_container_widget.dart';
+import 'package:register_form/features/auth/presentation/page/password/password_recovery_sms.dart';
+import 'package:register_form/features/auth/presentation/widgets/button_container_widget.dart';
+import 'package:register_form/features/auth/presentation/widgets/form_container_widget.dart';
 
 class PasswordRecoveryPhoneNumPage extends StatelessWidget {
   const PasswordRecoveryPhoneNumPage({super.key});

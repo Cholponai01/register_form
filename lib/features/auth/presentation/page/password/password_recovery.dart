@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:register_form/config/config.dart';
+import 'package:register_form/config/theme/app_colors.dart';
 import 'package:register_form/config/theme/sized_func.dart';
-import 'package:register_form/features/presentation/page/password/password_recovery.dart';
-import 'package:register_form/features/presentation/widgets/button_container_widget.dart';
-import 'package:register_form/features/presentation/widgets/form_container_widget.dart';
+import 'package:register_form/features/auth/presentation/page/registration/registration.dart';
+import 'package:register_form/features/auth/presentation/widgets/button_container_widget.dart';
+import 'package:register_form/features/auth/presentation/widgets/form_container_widget.dart';
 
-class PasswordRecoverySMSPage extends StatelessWidget {
-  const PasswordRecoverySMSPage({super.key});
+class PasswordRecoveryPage extends StatelessWidget {
+  const PasswordRecoveryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,10 @@ class PasswordRecoverySMSPage extends StatelessWidget {
         backgroundColor: AppColors.backgroundColor,
         body: Stack(
           children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              child: Image.asset("assets/images/linear_grad4.png"),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-              child: Image.asset("assets/images/linear_grad5.png"),
-            ),
+            Image.asset("assets/images/linear_grad6.png"),
+            Align(
+                alignment: Alignment.bottomRight,
+                child: Image.asset("assets/images/linear_grad7.png")),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
@@ -40,8 +34,7 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                         width: 1,
                       ),
                     ),
-                    child: SingleChildScrollView(
-                      child: Padding(
+                    child: Padding(
                         padding: const EdgeInsets.fromLTRB(12, 24, 12, 24),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,31 +47,41 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                             ),
                             sizeVer(42),
                             Text(
-                              "Введите код из СМС",
+                              "Нужно создать новый пароль?",
                               style: theme.textTheme.bodyMedium
                                   ?.copyWith(fontWeight: FontWeight.w600),
                             ),
                             sizeVer(7),
                             Text(
-                              "Для продолжения сброса пароля Вам нужно ввести код, который Вам пришел в СМС",
+                              "Введите свой новый пароль а после повторите его.",
                               style: theme.textTheme.bodyMedium,
                             ),
                             sizeVer(18),
                             Text(
-                              "СМС код",
+                              "Пароль",
                               style: theme.textTheme.bodyMedium,
                             ),
                             sizeVer(7),
-                            const FormContainerWidget(),
-                            sizeVer(7),
+                            const FormContainerWidget(
+                              isPasswordField: true,
+                            ),
+                            const SizedBox(height: 5),
                             Align(
                               alignment: Alignment.centerRight,
                               child: Text(
-                                "Не получили СМС?",
-                                style: theme.textTheme.bodySmall?.copyWith(
-                                  color: AppColors.black,
-                                ),
+                                "Не менее 8 символов",
+                                style: theme.textTheme.bodySmall
+                                    ?.copyWith(color: AppColors.green),
                               ),
+                            ),
+                            sizeVer(18),
+                            Text(
+                              "Повторите пароль",
+                              style: theme.textTheme.bodyMedium,
+                            ),
+                            sizeVer(7),
+                            const FormContainerWidget(
+                              isPasswordField: true,
                             ),
                             sizeVer(42),
                             Padding(
@@ -92,18 +95,15 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                                     Navigator.pushAndRemoveUntil(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) =>
-                                              const PasswordRecoveryPage(),
-                                        ),
+                                            builder: (context) =>
+                                                const SignInPage()),
                                         (route) => false);
                                   },
                                 ),
                               ),
                             ),
                           ],
-                        ),
-                      ),
-                    ),
+                        )),
                   ),
                 ],
               ),
