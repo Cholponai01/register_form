@@ -34,6 +34,11 @@ class _SignUpPageState extends State<SignUpPage> {
     super.dispose();
   }
 
+  bool isValidPassword(String password) {
+    RegExp regex = RegExp(r'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$');
+    return regex.hasMatch(password);
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -205,6 +210,11 @@ class _SignUpPageState extends State<SignUpPage> {
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "Oбязательно";
+                              } else if (!isValidPassword(value)) {
+                                print("Entered password: $value");
+                                print(
+                                    "Regex match result: ${isValidPassword(value)}");
+                                return "Пароль должен содержать минимум 8 символов, включая цифры, буквы верхнего и нижнего регистра.";
                               } else {
                                 return null;
                               }
@@ -222,6 +232,8 @@ class _SignUpPageState extends State<SignUpPage> {
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "Oбязательно";
+                              } else if (value != passwordController.text) {
+                                return "Пароли не совпадают";
                               } else {
                                 return null;
                               }

@@ -93,7 +93,7 @@ class PasswordRecoverySMSPage extends StatelessWidget {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) =>
-                                              const PasswordRecoveryPage(),
+                                              PasswordRecoveryPage(),
                                         ),
                                         (route) => false);
                                   },

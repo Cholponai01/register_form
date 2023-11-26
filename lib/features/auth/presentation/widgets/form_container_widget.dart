@@ -57,8 +57,8 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
         fillColor: AppColors.backgroundColor,
         filled: true,
         hintText: widget.hintText,
-        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
-        constraints: const BoxConstraints(maxHeight: 40, minHeight: 40),
+        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 8),
+        // constraints: const BoxConstraints(maxHeight: 40, minHeight: 40),
         suffixIcon: GestureDetector(
           onTap: () {
             setState(() {

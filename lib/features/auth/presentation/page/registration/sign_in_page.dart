@@ -18,6 +18,11 @@ class _SignInPageState extends State<SignInPage> {
   final passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  bool isValidPassword(String password) {
+    RegExp regex = RegExp(r'^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$');
+    return regex.hasMatch(password);
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -95,6 +100,8 @@ class _SignInPageState extends State<SignInPage> {
                                 validator: (value) {
                                   if (value == null || value.isEmpty) {
                                     return "Oбязательно";
+                                  } else if (!isValidPassword(value)) {
+                                    return "Пароль должен содержать минимум 8 символов, включая цифры, буквы верхнего и нижнего регистра.";
                                   } else {
                                     return null;
                                   }
@@ -136,13 +143,13 @@ class _SignInPageState extends State<SignInPage> {
                                       if (_formKey.currentState!.validate()) {
                                         print(iInController.text);
                                         print(passwordController.text);
+                                        Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const SignUpPage()),
+                                            (route) => false);
                                       }
-                                      Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const SignUpPage()),
-                                          (route) => false);
                                     },
                                   ),
                                 ),

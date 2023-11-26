@@ -59,6 +59,7 @@ class _GenderSelectionFormFieldState extends State<GenderSelectionFormField> {
         hintStyle: theme.textTheme.bodyMedium,
         contentPadding:
             const EdgeInsets.only(left: 10.0, top: 4.0, bottom: 4.0),
+        // constraints: const BoxConstraints(maxHeight: 40, minHeight: 40),
       ),
       onSaved: widget.onSaved,
       validator: widget.validator,
