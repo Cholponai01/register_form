@@ -35,48 +35,44 @@ class _FormContainerWidgetState extends State<FormContainerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.05,
-      child: TextFormField(
-        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-        controller: widget.controller,
-        keyboardType: widget.inputType,
-        key: widget.fieldKey,
-        obscureText: widget.isPasswordField == true ? _obscureText : false,
-        onSaved: widget.onsaved,
-        validator: widget.validator,
-        onFieldSubmitted: widget.onFieldSubmitted,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: const BorderSide(color: AppColors.black),
+    return TextFormField(
+      style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+      controller: widget.controller,
+      keyboardType: widget.inputType,
+      key: widget.fieldKey,
+      obscureText: widget.isPasswordField == true ? _obscureText : false,
+      onSaved: widget.onsaved,
+      validator: widget.validator,
+      onFieldSubmitted: widget.onFieldSubmitted,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8.0),
+          borderSide: const BorderSide(color: AppColors.black),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.black,
           ),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-          ),
-          fillColor: AppColors.backgroundColor,
-          filled: true,
-          hintText: widget.hintText,
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-          suffixIcon: GestureDetector(
-            onTap: () {
-              setState(() {
-                _obscureText = !_obscureText;
-              });
-            },
-            child: widget.isPasswordField == true
-                ? Icon(
-                    _obscureText ? Icons.visibility_off : Icons.visibility,
-                    color: _obscureText == false
-                        ? AppColors.black
-                        : AppColors.grey,
-                    size: 24,
-                  )
-                : const Text(""),
-          ),
+        ),
+        fillColor: AppColors.backgroundColor,
+        filled: true,
+        hintText: widget.hintText,
+        contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+        constraints: const BoxConstraints(maxHeight: 40, minHeight: 40),
+        suffixIcon: GestureDetector(
+          onTap: () {
+            setState(() {
+              _obscureText = !_obscureText;
+            });
+          },
+          child: widget.isPasswordField == true
+              ? Icon(
+                  _obscureText ? Icons.visibility_off : Icons.visibility,
+                  color:
+                      _obscureText == false ? AppColors.black : AppColors.grey,
+                  size: 24,
+                )
+              : const Text(""),
         ),
       ),
     );
